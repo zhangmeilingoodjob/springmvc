@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.0.xsd
+">
+
+	<bean id="coreDao" class="com.zml.ssh.dao.hibernate.HibernateEntityDao"
+		scope="prototype">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="corextendDao"
+		class="com.zml.ssh.dao.hibernate.extend.HibernateEntityExtendDao"
+		scope="prototype">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+
+	<!--使用泛型DAO作为抽象基类 -->
+	 <bean id="baseDao" class="com.zml.ssh.dao.hibernate.basedao.BaseDao" 
+		abstract="true" depends-on="coreDao,corextendDao">
+		<property name="coreDao">
+			<ref bean="coreDao" />
+		</property>
+		<property name="corextendDao">
+			<ref bean="corextendDao" />
+		</property>
+	</bean>
+
+	<!--下面这个dao没有写任何java代码完全有spring搞定 -->
+	<!-- 配置实体类的DAO -->
+	<bean id="UserDao" parent="baseDao">
+		<constructor-arg>
+			<!--根据这个生成某一个实体的dao -->
+			<value>com.zml.ssh.domain.User</value>
+		</constructor-arg>
+	</bean>
+
+</beans>

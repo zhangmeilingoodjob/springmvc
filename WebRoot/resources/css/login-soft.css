@@ -1,0 +1,93 @@
+/***
+Login page
+***/
+
+/* logo page */
+body {
+  background-color: #36F;
+  font-size:14px;
+  font-family:"微软雅黑";
+}
+a {
+	color:#FFF;
+	font-weight:bold;
+}
+.logo {
+	width:240px;
+	margin:auto;
+	margin-top:30px;
+}
+.main {
+	width:300px;
+	margin:auto;
+	margin-top:20px;
+	line-height:40px;
+	text-align:left;
+	color:#FFF;
+}
+.main li {
+	line-height:50px;
+}
+
+.input_text , .input_yzm {
+	border:#CCC 1px solid;
+	padding:5px;
+	font-size:14px;
+	font-family:"微软雅黑","幼圆";
+	background-color:#FFF;
+	width:200px;
+}
+.realname {
+	width:100px;
+}
+.input_yzm {
+	width:123px;
+	float:left;
+	margin-top:10px;
+}
+.yzm_img {
+	float:left;
+	margin-left:4px;
+	margin-top:10px;
+	width:72px;
+	height:29px;
+	line-height:29px;
+	background-color:#FFF;
+	text-align:center;
+	color:#333;
+}
+.lbl{
+	float:left;
+	margin:auto;
+	width:70px;
+}
+.btn_login , .btn_reg  {
+	padding:2px;
+	color:#FFF;
+	font-size:16px;
+	font-weight:bold;
+	font-family:"微软雅黑","幼圆";
+}
+.btn_login {
+	border:#FFBF00 1px solid;
+	background-color:#FFBF00;
+	height:30px;
+	line-height:25px;
+}
+.btn_reg {
+	border:#3C6 1px solid;
+	background-color:#3C6;
+	height:30px;
+	line-height:25px;
+}
+.btn_big {
+	width:135px;
+}
+.btn_small {
+	width:72px;
+}
+.copyright {
+	text-align:center;
+	font-size:12px;
+	color:#FFF;
+}
